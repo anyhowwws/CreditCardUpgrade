@@ -9,7 +9,7 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-import joblib
+from joblib import load
 
 # model = joblib.load("/Users/hows/Documents/CART.joblib")
 # pred = model.predict([[20,1]])
