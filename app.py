@@ -24,8 +24,10 @@ from joblib import load
 def index():
     if request.method =="POST":
         
-        purchase= float(request.form.get("Purchases"))
-        card = float(request.form.get("Supplementary card"))
+        Purchase= request.form.get("Purchases")
+        Card = request.form.get("Supplementary card")
+        purchase = float(Purchase)
+        card = float(Card)
         # model = load("/Users/hows/Documents/CART.joblib")
         # pred = model.predict([[float(rates)]])
         # PRED="$"+str(round(pred[0][0],2))
@@ -39,7 +41,7 @@ def index():
         pred3 = model3.predict([[purchase,card]])
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
-        return(render_template("index.html",result=pred1,result2=pred2,result3=pred3))
+        return(render_template("index.html",result=string(pred1),result2=string(pred2),result3=string(pred3)))
             
     else:
         # defaultRate=""
