@@ -30,9 +30,9 @@ def index():
         # pred = model.predict([[float(rates)]])
         # PRED="$"+str(round(pred[0][0],2))
         
-        model1 = load("CART.joblib")
-        model2 = load("RandomForest.joblib")
-        model3 = load("GB.joblib")
+        model1 = joblib.load("CART.joblib")
+        model2 = joblib.load("RandomForest.joblib")
+        model3 = joblib.load("GB.joblib")
         
         pred1 = model1.predict([[purchase,card]])
         pred2 = model2.predict([[purchase,card]])
