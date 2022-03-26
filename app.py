@@ -24,8 +24,8 @@ from joblib import load
 def index():
     if request.method =="POST":
         
-        purchase= request.form.get("Purchases")
-        card = request.form.get("Supplementary card")
+        purchase= float(request.form.get("Purchases"))
+        card = float(request.form.get("Supplementary card"))
         # model = load("/Users/hows/Documents/CART.joblib")
         # pred = model.predict([[float(rates)]])
         # PRED="$"+str(round(pred[0][0],2))
