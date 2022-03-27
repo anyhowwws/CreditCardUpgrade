@@ -38,23 +38,23 @@ def index():
         pred3 = model3.predict([[purchase,card]])
         
         if pred1[0] < 0.5:
-            pred1="Will NOT upgrade :("
+            Pred1="Will NOT upgrade :("
         else:
-            pred1="Will upgrade :)"
+            Pred1="Will upgrade :)"
             
         if pred2[0] < 0.5:
-            pred2="Will NOT upgrade :("
+            Pred2="Will NOT upgrade :("
         else:
-            pred2="Will upgrade :)"
+            Pred2="Will upgrade :)"
 
         if pred3[0] < 0.5:
-            pred3="Will NOT upgrade :("
+            Pred3="Will NOT upgrade :("
         else:
-            pred3="Will upgrade :)"        
+            Pred3="Will upgrade :)"        
             
-        Result1="The prediction via CART is: "+pred1)
-        Result2="The prediction via Random Forest is: "+pred2)
-        Result3="The prediction via Random Forest is: "+pred3)
+        Result1="The prediction via CART is: "+Pred1)
+        Result2="The prediction via Random Forest is: "+Pred2)
+        Result3="The prediction via Random Forest is: "+Pred3)
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
         return(render_template("index.html",result=Result1,result2=Result2,result3=Result3))
