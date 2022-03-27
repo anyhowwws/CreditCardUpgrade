@@ -26,14 +26,21 @@ def prediction(predValue):
         return "Will NOT upgrade :("
     else:
         return "Will upgrade :)"
-
+def UITranslate(UIoption):
+    if UIoption=="yes":
+        return 1
+    else:
+        return 0
+    
 @app.route("/", methods=["GET","POST"])
 def index():
     if request.method =="POST":
         Purchase=request.form.get("Purchases")
-        Card=request.form.get("Supplementary card")
+        #Card=request.form.get("Supplementary card")
+        Card=request.form.get("card")
+        card = UITranslate(Card)
         purchase = float(Purchase)
-        card = int(Card)
+        #card = int(Card)
         
         model1 = load("CART")
         model2 = load("RandomForest")
