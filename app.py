@@ -39,9 +39,10 @@ def index():
         pred1 = model1.predict([[purchase,card]])
         pred2 = model2.predict([[purchase,card]])
         pred3 = model3.predict([[purchase,card]])
+        
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
-        return(render_template("index.html",result=string(pred1),result2=string(pred2),result3=string(pred3)))
+        return(render_template("index.html",result=str(pred1),result2=str(pred2),result3=str(pred3)))
             
     else:
         # defaultRate=""
