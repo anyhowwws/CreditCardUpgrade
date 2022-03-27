@@ -24,9 +24,8 @@ from joblib import load
 @app.route("/", methods=["GET","POST"])
 def index():
     if request.method =="POST":
-        
-        Purchase= request.form.get("Purchases")
-        Card = request.form.get("Supplementary card")
+        Purchase=request.form.get("Purchases")
+        Card=request.form.get("Supplementary card")
         purchase = float(Purchase)
         card = float(Card)
         # model = load("/Users/hows/Documents/CART.joblib")
