@@ -37,13 +37,15 @@ def index():
         model2 = joblib.load("RandomForest")
         model3 = joblib.load("GB")
         
-        pred1 = model1.predict([[purchase,card]])
-        pred2 = model2.predict([[purchase,card]])
-        pred3 = model3.predict([[purchase,card]])
-        
+        #pred1 = model1.predict([[purchase,card]])
+        #pred2 = model2.predict([[purchase,card]])
+        #pred3 = model3.predict([[purchase,card]])
+        #Result1=str(pred1)
+        #Results2=str(pred2)
+        #Result3=str(pred3)
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
-        return(render_template("index.html",result=str(pred1),result2=str(pred2),result3=str(pred3)))
+        return(render_template("index.html",result="1",result2="2",result3="3"))
             
     else:
         # defaultRate=""
