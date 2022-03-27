@@ -26,6 +26,7 @@ def prediction(predValue):
         return "Will NOT upgrade :("
     else:
         return "Will upgrade :)"
+    
 def UITranslate(UIoption):
     if UIoption=="yes":
         return 1
