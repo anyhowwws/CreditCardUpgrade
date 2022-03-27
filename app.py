@@ -27,7 +27,7 @@ def index():
         Purchase=request.form.get("Purchases")
         Card=request.form.get("Supplementary card")
         purchase = float(Purchase)
-        card = float(Card)
+        card = int(Card)
         
         model1 = load("CART")
         model2 = load("RandomForest")
