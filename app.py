@@ -33,15 +33,16 @@ def index():
         model2 = load("RandomForest")
         model3 = load("GB")
         
-        pred1 = model1.predict([[purchase,card]])
-        pred2 = model2.predict([[purchase,card]])
-        pred3 = model3.predict([[purchase,card]])
-        Result1=str(pred1[0][0])
-        Results2=str(pred2[0][0])
-        Result3=str(pred3[0][0])
+        #pred1 = model1.predict([[purchase,card]])
+        #pred2 = model2.predict([[purchase,card]])
+        #pred3 = model3.predict([[purchase,card]])
+        #Result1=str(pred1[0][0])
+        #Results2=str(pred2[0][0])
+        #Result3=str(pred3[0][0])
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
-        return(render_template("index.html",result=Result1,result2=Result2,result3=Result3))
+        #return(render_template("index.html",result=Result1,result2=Result2,result3=Result3))
+        return(render_template("index.html",result="1",result2="2",result3="3"))
             
     else:
         # defaultRate=""
