@@ -23,9 +23,9 @@ from joblib import load
 
 def prediction(predValue):
     if predValue<0.5:
-        return "Will NOT upgrade :("
+        return "Nah. Will NOT upgrade =("
     else:
-        return "Will upgrade :)"
+        return "Yeah! Will upgrade =)"
     
 def UITranslate(UIoption):
     if UIoption=="yes":
@@ -51,9 +51,9 @@ def index():
         pred2 = model2.predict([[purchase,card]])
         pred3 = model3.predict([[purchase,card]])
             
-        Result1="The prediction via CART is: "+prediction(pred1[0])
-        Result2="The prediction via Random Forest is: "+prediction(pred2[0])
-        Result3="The prediction via Random Forest is: "+prediction(pred3[0])
+        Result1="CART says: "+prediction(pred1[0])
+        Result2="Random Forest says: "+prediction(pred2[0])
+        Result3="XGBoost says: "+prediction(pred3[0])
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
         return(render_template("index.html",result=Result1,result2=Result2,result3=Result3))
