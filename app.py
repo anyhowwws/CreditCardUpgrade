@@ -21,6 +21,12 @@ from joblib import load
 # model3 = joblib.load("/Users/hows/Documents/GB.joblib")
 # pred3 = model3.predict([[20,1]])
 
+def prediction(predValue):
+    if predValue<0.5:
+        return "Will NOT upgrade :("
+    else:
+        return "Will upgrade :)"
+
 @app.route("/", methods=["GET","POST"])
 def index():
     if request.method =="POST":
@@ -36,25 +42,10 @@ def index():
         pred1 = model1.predict([[purchase,card]])
         pred2 = model2.predict([[purchase,card]])
         pred3 = model3.predict([[purchase,card]])
-        
-        if pred1[0] < 0.5:
-            Pred1="Will NOT upgrade :("
-        else:
-            Pred1="Will upgrade :)"
             
-        if pred2[0] < 0.5:
-            Pred2="Will NOT upgrade :("
-        else:
-            Pred2="Will upgrade :)"
-
-        if pred3[0] < 0.5:
-            Pred3="Will NOT upgrade :("
-        else:
-            Pred3="Will upgrade :)"        
-            
-        Result1="The prediction via CART is: "+Pred1)
-        Result2="The prediction via Random Forest is: "+Pred2)
-        Result3="The prediction via Random Forest is: "+Pred3)
+        Result1="The prediction via CART is: "+prediction(pred1[0])
+        Result2="The prediction via Random Forest is: "+prediction(pred2[0])
+        Result3="The prediction via Random Forest is: "+prediction(pred3[0])
 
         # return(render_template("/Users/hows/Documents/week2/templates/index.html",result="1",result2="2",result3="3"))
         return(render_template("index.html",result=Result1,result2=Result2,result3=Result3))
